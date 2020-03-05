@@ -18,29 +18,34 @@
 </head>
 <body>
 
-    <div class="container">
-    <div class="row">
+    <!-- PAGE CONTENT GOES HERE -->
 
-        <div class="col-sm-4" style="margin-top : 50px; margin-bottom : 50px">
-            <h3 style="font-family : Consolas; background : #d1d1e0; margin : 0 px; padding : 5px">BORDERLANDS 3</h3>
-            <img src="<?php echo base_url(); ?>images\borderlands.png" class="img-fluid" alt="Responsive image">
+    <div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+        <!-- Card content -->
         </div>
-
-        <div class="col-sm-4">
-            <h3>Game 2</h3>
-            <p>Lorem ipsum dolor..</p>
-            <img src="/images/pathToYourImage.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="card p-3">
+        <!-- Card content -->
+    </div>
+    <div class="card">
+        <div class="card-body">
+        <!-- Card content -->
         </div>
-
-        <div class="col-sm-4">
-            <h3>Game 3</h3>
-            <p>Lorem ipsum dolor..</p>
-            <img src="/images/pathToYourImage.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="card bg-primary p-3 text-center">
+        <!-- Card content -->
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4>Welcome</h4>
+            <p>Hello</p>
         </div>
-        
     </div>
     </div>
-    
+
+    <!-- bootstrap finish -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
