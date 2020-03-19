@@ -63,3 +63,6 @@ $route['logout'] = 'auth/logout';
 //Create review route
 $route['create_review_page'] = 'review/createReviewIndex';
 $route['create_review'] = 'review/createReview';
+
+//Review pages routes
+$route['review/:num'] = 'review/loadReview'

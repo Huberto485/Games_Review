@@ -11,18 +11,60 @@
 
     <!-- load in bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+
 
     <!-- load the header -->
     <?php $this->load->file('C:/xampp/htdocs/Games_Review/application/views/header.php'); ?>
 
 </head>
 <body>
+
+    <!-- container hosting the carousel element -->
+    <div class="container" style="margin-top: 25px; padding: 35px">
+    <div class="row">
+
+        <!-- carousel Bootstrap code -->
+        <div id="reviewCarousel" class="carousel slide pointer-event" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+
+                <div class="carousel-item active">
+                    <a href="<?php echo base_url(); ?>index.php/review/5"><img class="d-block w-100" src="<?php echo base_url(); ?>images/witcher3.png" data-holder-rendered="true"></a>
+                    <div class="carousel-caption">
+                        <h3 style="color: black"><b>Featured review</b></h3>
+                        <p style="color: black"><b>Witcher 3: Blood and Wine</b></p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="<?php echo base_url(); ?>index.php/review/5"><img class="d-block w-100" src="<?php echo base_url(); ?>images/darksouls3wide.png" data-holder-rendered="true"></a>
+                    <div class="carousel-caption">
+                        <h3><b>Featured review</b></h3>
+                        <p><b>Dark Souls 3</b></p>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#reviewCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    
+    </div>
+    </div>
+
     <div class="container">
     <div class="row">
         <?php foreach($Reviews as $review) { ?>
         <div class="col-sm-4" style="margin-top : 50px; margin-bottom : 50px">
             <h3 style="font-family : Verdana; background : #e6e6e6; margin : 0px; padding : 5px; border-radius: 15px 15px 0px 0px"><?php echo $review->title; ?></h3>
-            <a href="#"><img style="border-radius: 0px 0px 15px 15px" src="<?php echo base_url(); ?>images/<?php echo $review->image; ?>.jpg" class="img-fluid" alt="Responsive image"></a>
+            <a href="<?php echo base_url(); ?>index.php/review/<?php echo $review->review_id?>"><img style="border-radius: 0px 0px 15px 15px" src="<?php echo base_url(); ?>images/<?php echo $review->image; ?>.jpg" class="img-fluid" alt="Responsive image"></a>
         </div>
         <?php } ?>
         

@@ -14,6 +14,13 @@ class Review_model extends CI_Model {
         return $query->result();
     }
 
+    public function getReview() {
+
+        $reviewId = $this->uri->segment(2,0);
+        
+        $data['ReviewData'] = $this->Review_model->getReview();
+    }
+
     public function insertReview($data) {
 
         //Insert the data of a review into a tuple

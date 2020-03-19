@@ -15,6 +15,15 @@ class Review extends CI_Controller {
         $this->load->model('Review_model');
     }
 
+    public function loadReview() {
+
+        $reviewId = $this->uri->segment(2,0);
+        
+        $data['ReviewData'] = $this->Review_model->getReview();
+
+        $this->load->view('review', )
+    }
+
     //Function called when a user first visits the './create_review' page
     public function createReviewIndex() {
 
