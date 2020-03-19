@@ -11,17 +11,20 @@ class Review extends CI_Controller {
         $this->load->helper('url');
         $this->load->helper('html');   
         
-        //Load the model for Reviews
+        //Load the models
         $this->load->model('Review_model');
+        $this->load->model('Comment_model');
     }
 
     public function loadReview() {
 
         $reviewId = $this->uri->segment(2,0);
         
-        $data['ReviewData'] = $this->Review_model->getReview();
+        $data['ReviewData'] = $this->Review_model->getReview($reviewId);
 
-        $this->load->view('review', )
+        $data['CommentData'] = $this->Comment_model->loadComments($reviewId);
+
+        $this->load->view('review', $data);
     }
 
     //Function called when a user first visits the './create_review' page

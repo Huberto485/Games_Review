@@ -21,46 +21,44 @@
 </head>
 <body>
 
-    <!-- container hosting the carousel element -->
-    <div class="container" style="margin-top: 25px; padding: 35px">
-    <div class="row">
-
-        <!-- carousel Bootstrap code -->
-        <div id="reviewCarousel" class="carousel slide pointer-event" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-
-                <div class="carousel-item active">
-                    <a href="<?php echo base_url(); ?>index.php/review/5"><img class="d-block w-100" src="<?php echo base_url(); ?>images/witcher3.png" data-holder-rendered="true"></a>
-                    <div class="carousel-caption">
-                        <h3 style="color: black"><b>Featured review</b></h3>
-                        <p style="color: black"><b>Witcher 3: Blood and Wine</b></p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <a href="<?php echo base_url(); ?>index.php/review/5"><img class="d-block w-100" src="<?php echo base_url(); ?>images/darksouls3wide.png" data-holder-rendered="true"></a>
-                    <div class="carousel-caption">
-                        <h3><b>Featured review</b></h3>
-                        <p><b>Dark Souls 3</b></p>
-                    </div>
-                </div>
-
-            </div>
-            <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#reviewCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    
-    </div>
-    </div>
-
     <div class="container">
     <div class="row">
+
+        <div class="col-sm-12">
+            <!-- carousel Bootstrap code -->
+            <div id="reviewCarousel" class="carousel slide pointer-event col-sm-12" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="carousel-item active">
+                        <a href="<?php echo base_url(); ?>index.php/review/5"><img class="d-block w-100" src="<?php echo base_url(); ?>images/witcher3.png" data-holder-rendered="true"></a>
+                        <div class="carousel-caption">
+                            <p style="color: black" align="right">Featured review</br><b>Witcher 3: Blood and Wine</b></p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="<?php echo base_url(); ?>index.php/review/6"><img class="d-block w-100" src="<?php echo base_url(); ?>images/darksouls3wide.png" data-holder-rendered="true"></a>
+                        <div class="carousel-caption">
+                            <p align="right">Featured review</br><b>Dark Souls 3</b></p>
+                        </div>
+                    </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#reviewCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div style="margin-top : 25px" class="col-sm-12" align="center">
+            <h1>Latest Reviews</h1>
+        </div>
+
         <?php foreach($Reviews as $review) { ?>
         <div class="col-sm-4" style="margin-top : 50px; margin-bottom : 50px">
             <h3 style="font-family : Verdana; background : #e6e6e6; margin : 0px; padding : 5px; border-radius: 15px 15px 0px 0px"><?php echo $review->title; ?></h3>

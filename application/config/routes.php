@@ -65,4 +65,4 @@ $route['create_review_page'] = 'review/createReviewIndex';
 $route['create_review'] = 'review/createReview';
 
 //Review pages routes
-$route['review/:num'] = 'review/loadReview'
+$route['review/:num'] = 'review/loadReview';

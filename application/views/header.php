@@ -4,7 +4,7 @@
 
     <div class="jumbotron text-center" style="margin-bottom : 0px">
         <div class=".col-md-12">
-            <h1>GAMES REVIEW</h1>
+            <h1 style="font-size: 100px"><b>GAMES REVIEW</b></h1>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
             -->
 
             <li class="nav-item <?php if(current_url() == base_url() . "index.php") { echo 'active';} ?>">
-                <a class="nav-link" href="<?php echo base_url(); ?>index.php">HOME</a>
+                <a class="nav-link" href="<?php echo base_url(); ?>index.php">REVIEWS</a>
             </li>
 
             <li class="nav-item <?php if(current_url() == base_url() . "index.php/create_review_page") { echo 'active';} ?>">

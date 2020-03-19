@@ -78,6 +78,11 @@ class Migration_Add_Users extends CI_Migration {
                 'constraint' => 5,
                 'auto_increment' => TRUE
             ),
+            'FK_comment_review' => array(
+                'type' => 'INT',
+                'constraint' => 5,
+                'null' => FALSE
+            ),
             'FK_comment_username' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '50',

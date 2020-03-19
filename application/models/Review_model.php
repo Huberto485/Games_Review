@@ -14,11 +14,15 @@ class Review_model extends CI_Model {
         return $query->result();
     }
 
-    public function getReview() {
+    public function getReview($reviewId) {
 
-        $reviewId = $this->uri->segment(2,0);
-        
-        $data['ReviewData'] = $this->Review_model->getReview();
+        $this->db->select('*');
+        $this->db->from('reviews');
+        $this->db->where('review_id', $reviewId);
+
+        $query = $this->db->get();
+
+        return $query->result();
     }
 
     public function insertReview($data) {

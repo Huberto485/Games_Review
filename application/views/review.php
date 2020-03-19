@@ -21,10 +21,42 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" style="margin-top : 25px">
     <div class="row">
+        <?php foreach($ReviewData as $review) { ?>
+        <div class="col-sm-3">
+            <img src="<?php echo base_url(); ?>images/<?php echo $review->image; ?>.jpg" class="img-fluid" alt="Responsive image" >
+        </div>
+
+        <div class="col-sm-9">
+            <p><?php echo $review->review_text; ?></p>
+        </div>
+        <?php } ?>
         
+        <!-- Add comment space -->
+        <div class="col-sm-12" style="margin-top : 5%">
+        <form method="POST" id="review_form" action="./add_comment">
+
+            <!-- fields of the registration form -->
+
+            <div class="form-group">  
+                <textarea maxlength="1000" style="width : 100%; border-radius : 3px; border : 1px solid #d9d9d9" id="review" name="review" placeholder="Start writing here..." form="review_form"></textarea>
+                <span class="text-danger"><?php echo form_error('review'); ?></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="comment" value="Add Comment" class="btn btn-primary" />
+            </div>
+
+        </form>
+        </div>
         
+        <!-- Comment space -->
+        <div class="col-sm-12">
+            <?php foreach($CommentData as $comment) { ?>
+
+            <?php } ?>
+        </div>
     </div>
     </div>
     
