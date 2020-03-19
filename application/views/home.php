@@ -17,26 +17,14 @@
 
 </head>
 <body>
-
     <div class="container">
     <div class="row">
-
+        <?php foreach($Reviews as $review) { ?>
         <div class="col-sm-4" style="margin-top : 50px; margin-bottom : 50px">
-            <h3 style="font-family : Consolas; background : #d1d1e0; margin : 0 px; padding : 5px">BORDERLANDS 3</h3>
-            <img src="<?php echo base_url(); ?>images\borderlands.png" class="img-fluid" alt="Responsive image">
+            <h3 style="font-family : Verdana; background : #e6e6e6; margin : 0px; padding : 5px; border-radius: 15px 15px 0px 0px"><?php echo $review->title; ?></h3>
+            <a href="#"><img style="border-radius: 0px 0px 15px 15px" src="<?php echo base_url(); ?>images/<?php echo $review->image; ?>.jpg" class="img-fluid" alt="Responsive image"></a>
         </div>
-
-        <div class="col-sm-4">
-            <h3>Game 2</h3>
-            <p>Lorem ipsum dolor..</p>
-            <img src="/images/pathToYourImage.png" class="img-fluid" alt="Responsive image">
-        </div>
-
-        <div class="col-sm-4">
-            <h3>Game 3</h3>
-            <p>Lorem ipsum dolor..</p>
-            <img src="/images/pathToYourImage.png" class="img-fluid" alt="Responsive image">
-        </div>
+        <?php } ?>
         
     </div>
     </div>

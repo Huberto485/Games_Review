@@ -54,3 +54,12 @@ $route['index'] = 'Home/index';
 $route['about'] = 'Other/about';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//Authorisation routes
+$route['login'] = 'auth/login';
+$route['register'] = 'auth/register';
+$route['logout'] = 'auth/logout';
+
+//Create review route
+$route['create_review_page'] = 'review/createReviewIndex';
+$route['create_review'] = 'review/createReview';
