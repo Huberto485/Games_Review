@@ -15,27 +15,50 @@ class User extends CI_Controller {
         $this->load->model('User_model');
     }
 
+    //Display user profile data when accessed
     public function index() {
 
+        //Fetch user info through the model
         $data['UserDetails'] = $this->User_model->getProfileInfo();
 
+        //Send the data to the view
         $this->load->view('profile', $data);
     }
 
+    //When user makes changes to their profile, run this function
     public function updateProfile() {
-        
-        $username = $_SESSION['username'];
 
-        $data = array(
-            'username'=> $this->input->post('username'),
-            'name'=> $this->input->post('name')
-        );
+        //Check the validity of the input data
+        $this->form_validation->set_rules('username', 'Username', 'required|max_length[50]');
+        $this->form_validation->set_rules('name', 'Name', 'required|max_length[50]');
 
-        $this->User_model->setProfileInfo($data, $username);
+        //If valid, move on
+        if ($this->form_validation->run() == TRUE) {
 
-        $_SESSION['username'] = $this->input->post('username');
+            //Set the username to current user's username
+            $username = $_SESSION['username'];
 
-        $this->session->set_flashdata("success", "Your profile has been updated!");
-        redirect(base_url() . "index.php/profile");
+            //Set the data received into an array
+            $data = array(
+                'username'=> $this->input->post('username'),
+                'name'=> $this->input->post('name')
+            );
+
+            //Use the model to update the info of the current user
+            $this->User_model->setProfileInfo($data, $username);
+
+            //Update the username session with user's new username
+            $_SESSION['username'] = $this->input->post('username');
+
+            //Display a one-time success message on profile update success
+            $this->session->set_flashdata("success", "Your profile has been updated!");
+            redirect(base_url() . "index.php/profile");
+        }
+        else {
+
+            //Display a one-time error message on user update failure
+            $this->session->set_flashdata("error", "Some information in your profile is not valid!");
+            redirect(base_url() . "index.php/profile");
+        }
     }
 }

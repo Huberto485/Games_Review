@@ -21,14 +21,21 @@
 </head>
 <body>
 
+    <!-- SOME RELEVANT INFORMATION
+         each REVIEW image has dimensions of 459x570;
+         each CAROUSEL item image has dimensions of 1082x340;
+         currently, CAROUSEL only uses non-dynamic records of reviews that are preset!!;
+    -->
+
     <div class="container">
     <div class="row">
 
+        <!-- Bootstrap carousel element -->
         <div class="col-sm-12">
-            <!-- carousel Bootstrap code -->
             <div id="reviewCarousel" class="carousel slide pointer-event col-sm-12" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
-
+                    
+                    <!-- Non-dynamic carousel item 1 -->
                     <div class="carousel-item active">
                         <a href="<?php echo base_url(); ?>index.php/review/5"><img class="d-block w-100" src="<?php echo base_url(); ?>images/witcher3.png" data-holder-rendered="true"></a>
                         <div class="carousel-caption">
@@ -36,6 +43,7 @@
                         </div>
                     </div>
 
+                    <!-- Non-dynamic carousel item 1 -->
                     <div class="carousel-item">
                         <a href="<?php echo base_url(); ?>index.php/review/6"><img class="d-block w-100" src="<?php echo base_url(); ?>images/darksouls3wide.png" data-holder-rendered="true"></a>
                         <div class="carousel-caption">
@@ -55,13 +63,17 @@
             </div>
         </div>
 
+        <!-- Heading on the review page -->
         <div style="margin-top : 25px" class="col-sm-12" align="center">
             <h1>Latest Reviews</h1>
         </div>
 
+        <!-- Review elements on the home page -->
         <?php foreach($Reviews as $review) { ?>
         <div class="col-sm-4" style="margin-top : 50px; margin-bottom : 50px">
             <h3 style="font-family : Verdana; background : #e6e6e6; margin : 0px; padding : 5px; border-radius: 15px 15px 0px 0px"><?php echo $review->title; ?></h3>
+
+            <!-- Image link, click on the image to hop to the review which has this photo displayed -->
             <a href="<?php echo base_url(); ?>index.php/review/<?php echo $review->review_id?>"><img style="border-radius: 0px 0px 15px 15px" src="<?php echo base_url(); ?>images/<?php echo $review->image; ?>.jpg" class="img-fluid" alt="Responsive image"></a>
         </div>
         <?php } ?>

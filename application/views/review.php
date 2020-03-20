@@ -21,9 +21,17 @@
 </head>
 <body>
 
+    <!-- SOME RELEVANT INFO
+         only 1 review row should be passed from the controller;
+         this results in the FOREACH function only loading in each element only ONCE;
+         if more rows are passed, page will break;
+         comments are NON-DYNAMIC, but, page gets refreshed on comment post automatically!
+    -->
+
     <div class="container" style="margin-top : 25px">
     <div class="row">
 
+        <!-- One-time message fields -->
         <div class="col-sm-12">
             <?php if (isset($_SESSION['success'])) { ?>
                 <div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
@@ -53,10 +61,11 @@
             </div>
 
             <div class="form-group">  
-                <textarea maxlength="1000" style="width : 100%; border-radius : 3px; border : 1px solid #d9d9d9" id="comment_text" name="comment_text" placeholder="Start writing here..." form="comment_form"></textarea>
+                <textarea maxlength="200" style="width : 100%; border-radius : 3px; border : 1px solid #d9d9d9" id="comment_text" name="comment_text" placeholder="Start writing here..." form="comment_form"></textarea>
                 <span class="text-danger"><?php echo form_error('comment_text'); ?></span>
             </div>
-
+            
+            <!-- Submit button of the comment form -->
             <div class="form-group">
                 <input type="submit" name="comment" value="Add Comment" class="btn btn-primary" />
             </div>

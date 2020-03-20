@@ -17,13 +17,16 @@
     <!-- Navigation -->
     <?php $this->load->file('C:\xampp\htdocs\Games_Review\application\views\header.php'); ?>
 
+    <!-- Main page frame -->
     <div class="container" style="width : 50%">
     <br />
+    <!-- Title of the page -->
     <h3 align="center">Create Review</h3>
     <br />
         <div class="panel panel-default">
             <div class="panel-body">
 
+                <!-- Messages on top of the page which are one-time messages from controller -->
                 <?php if (isset($_SESSION['error'])) { ?>
                     <div class="alert alert-warning"> <?php echo $_SESSION['error']; ?></div>
                 <?php } ?>
@@ -57,7 +60,9 @@
                     <div class="form-group">
                         <input type="submit" name="createReview" value="Create Review" class="btn btn-primary" />
                     </div>
+
                 </form>
+                
             </div>
         </div>
     </div>

@@ -14,11 +14,18 @@
 
 <body>
 
+    <!-- SOME RELEVANT INFORMATION
+         currently, profile loads as many fields as there are records received;
+         there should only be 1 record received at any time;
+         therefore page will load each element only 1 time!
+    -->
+
     <!-- Navigation -->
     <?php $this->load->file('C:\xampp\htdocs\Games_Review\application\views\header.php'); ?>
 
     <div class="container" style="width : 50%; margin-top : 50px">
     <br />
+    <!-- Title of the page above the form -->
     <h3 align="center">Profile</h3>
     <br />
         <div class="panel panel-default">
@@ -30,6 +37,7 @@
                 } ?>
                 <!-- start the form for registration -->
                 <form method="POST" action="./update_profile">
+
                     <?php foreach($UserDetails as $user) { ?>
                     <div class="form-group">
                         <label>Username</label>
@@ -43,10 +51,12 @@
                         <span class="text-danger"><?php echo form_error('name'); ?></span>
                     </div>
                     <?php } ?>
-
+                    
+                    <!-- Submit button of the form -->
                     <div class="form-group">
                         <input type="submit" name="update" value="Update" class="btn btn-primary" />
                     </div>
+
                 </form>
             </div>
         </div>

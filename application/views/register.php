@@ -19,11 +19,13 @@
 
     <div class="container" style="width : 50%">
     <br />
+    <!-- Title of the page above the form -->
     <h3 align="center">Registration</h3>
     <br />
         <div class="panel panel-default">
             <div class="panel-body">
 
+                <!-- One-time message space -->
                 <?php if (isset($_SESSION['success'])) { ?>
                     <div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
                 <?php
@@ -49,9 +51,11 @@
                         <span class="text-danger"><?php echo form_error('name'); ?></span>
                     </div>
 
+                    <!-- Submit button of the form -->
                     <div class="form-group">
                         <input type="submit" name="register" value="Register" class="btn btn-primary" />
                     </div>
+                    
                 </form>
             </div>
         </div>
