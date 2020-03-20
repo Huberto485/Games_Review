@@ -60,9 +60,17 @@ $route['login'] = 'auth/login';
 $route['register'] = 'auth/register';
 $route['logout'] = 'auth/logout';
 
+//User profile routes
+$route['profile'] = 'user/index';
+$route['update_profile'] = 'user/updateProfile';
+
 //Create review route
 $route['create_review_page'] = 'review/createReviewIndex';
 $route['create_review'] = 'review/createReview';
 
 //Review pages routes
 $route['review/:num'] = 'review/loadReview';
+
+//Comment routes
+$route['add_comment'] = 'comment/addComment';
+$route['load_comment'] = 'comment/loadComment';

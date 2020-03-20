@@ -26,13 +26,11 @@
 
                 <?php if (isset($_SESSION['error'])) { ?>
                     <div class="alert alert-warning"> <?php echo $_SESSION['error']; ?></div>
-                <?php
-                } ?>
+                <?php } ?>
 
                 <?php if (isset($_SESSION['success'])) { ?>
                     <div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
-                <?php
-                } ?>
+                <?php } ?>
                 
                 <!-- start the form for registration -->
                 <form method="POST" id="review_form" action="./create_review">

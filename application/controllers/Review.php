@@ -16,14 +16,19 @@ class Review extends CI_Controller {
         $this->load->model('Comment_model');
     }
 
+    //When a user clicks on a review, take them to the page of this review
     public function loadReview() {
 
+        //Get the ID of the review from the URI
         $reviewId = $this->uri->segment(2,0);
         
+        //Get the record of the review in the review model
         $data['ReviewData'] = $this->Review_model->getReview($reviewId);
 
+        //Get the comments made by the users under the review
         $data['CommentData'] = $this->Comment_model->loadComments($reviewId);
 
+        //Send the comment and review data to the review page
         $this->load->view('review', $data);
     }
 

@@ -36,7 +36,7 @@
             <?php if(isset($_SESSION['username'])) { ?>
 
             <li class="nav-item <?php if(current_url() == base_url() . "index.php/profile") { echo 'active';} ?>">
-                <a class="nav-link" href="<?php echo base_url(); ?>index.php">PROFILE</a>
+                <a class="nav-link" href="<?php echo base_url(); ?>index.php/profile">PROFILE</a>
             </li>
 
             <li class="nav-item <?php if(current_url() == base_url() . "index.php/logout") { echo 'active';} ?>">
@@ -56,12 +56,6 @@
             <?php ; } ?>
             
             </ul>
-            <?php if(current_url() === base_url() . "index.php") { ?>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            <?php } ?>
         </div>
     </nav>
 

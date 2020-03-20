@@ -19,6 +19,7 @@ class Review_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('reviews');
         $this->db->where('review_id', $reviewId);
+        $this->db->join('users', 'users.user_id = reviews.FK_review_username');
 
         $query = $this->db->get();
 
